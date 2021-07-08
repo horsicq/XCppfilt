@@ -18,6 +18,9 @@ CONFIG(debug, debug|release) {
     TARGET = cppfilt
 }
 
+DEFINES += "HAVE_STDLIB_H"
+DEFINES += "HAVE_STRING_H"
+
 INCLUDEPATH += $$PWD/src
 DEPENDPATH += $$PWD/src
 
