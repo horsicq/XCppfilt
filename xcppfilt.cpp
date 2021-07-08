@@ -25,3 +25,15 @@ XCppfilt::XCppfilt(QObject *pParent) : QObject(pParent)
     
 }
 
+QString XCppfilt::demangleGnuV3(QString sString)
+{
+    QString sResult;
+
+    char *pResult=cplus_demangle(sString.toLatin1().data(),(DMGL_PARAMS|DMGL_ANSI|DMGL_TYPES));
+    sResult=pResult;
+
+    free(pResult);
+
+    return sResult;
+}
+

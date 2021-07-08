@@ -4109,7 +4109,7 @@ d_growable_string_resize (struct d_growable_string *dgs, size_t need)
   while (newalc < need)
     newalc <<= 1;
 
-  newbuf = (char *) realloc (dgs->buf, newalc);
+  newbuf = (char *) xrealloc (dgs->buf, newalc);
   if (newbuf == NULL)
     {
       free (dgs->buf);

@@ -21,7 +21,8 @@
 #ifndef XCPPFILT_H
 #define XCPPFILT_H
 
-#include "capstone/capstone.h"
+#include "demangle.h"
+#include <QObject>
 
 class XCppfilt : public QObject
 {
@@ -29,6 +30,7 @@ class XCppfilt : public QObject
 
 public:
     explicit XCppfilt(QObject *pParent=nullptr);
+    static QString demangleGnuV3(QString sString);
 };
 
 #endif // XCPPFILT_H

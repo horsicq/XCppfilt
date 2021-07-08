@@ -59,3 +59,11 @@ SOURCES += \
     src/xexit.c \
     src/xmalloc.c \
     src/xstrdup.c
+
+HEADERS += \
+    src/ansidecl.h \
+    src/cp-demangle.h \
+    src/demangle.h \
+    src/environ.h \
+    src/libiberty.h \
+    src/safe-ctype.h
