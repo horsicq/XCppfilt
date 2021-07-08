@@ -23,6 +23,7 @@
 
 #include "demangle.h"
 #include <QObject>
+#include <stdio.h>
 
 class XCppfilt : public QObject
 {

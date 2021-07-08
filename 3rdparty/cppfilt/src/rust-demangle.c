@@ -279,7 +279,7 @@ static void
 print_uint64 (struct rust_demangler *rdm, uint64_t x)
 {
   char s[21];
-  snprintf (s, 21, "%" PRIu64, x);
+  sprintf (s, "%" PRIu64, x);
   PRINT (s);
 }
 
@@ -287,7 +287,7 @@ static void
 print_uint64_hex (struct rust_demangler *rdm, uint64_t x)
 {
   char s[17];
-  snprintf (s, 17, "%" PRIx64, x);
+  sprintf (s, "%" PRIx64, x);
   PRINT (s);
 }
 
