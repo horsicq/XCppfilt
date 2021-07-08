@@ -4777,7 +4777,7 @@ d_maybe_print_designated_init (struct d_print_info *dpi, int options,
   if (!is_designated_init (dc))
     return 0;
 
-  const char *code = d_left (dc)->u.s_operator.op->code;
+  char *code = d_left (dc)->u.s_operator.op->code;
 
   struct demangle_component *operands = d_right (dc);
   struct demangle_component *op1 = d_left (operands);

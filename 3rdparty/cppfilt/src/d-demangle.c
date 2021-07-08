@@ -343,7 +343,7 @@ dlang_backref (const char *mangled, const char **ret, struct dlang_info *info)
     return NULL;
 
   /* Position of 'Q'.  */
-  const char *qpos = mangled;
+  char *qpos = mangled;
   long refpos;
   mangled++;
 
@@ -1020,7 +1020,7 @@ dlang_identifier (string *decl, const char *mangled, struct dlang_info *info)
       && (mangled[2] == 'T' || mangled[2] == 'U'))
     return dlang_parse_template (decl, mangled, info, TEMPLATE_LENGTH_UNKNOWN);
 
-  const char *endptr = dlang_number (mangled, &len);
+  char *endptr = dlang_number (mangled, &len);
 
   if (endptr == NULL || len == 0)
     return NULL;
