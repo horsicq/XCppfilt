@@ -37,3 +37,14 @@ QString XCppfilt::demangleGnuV3(QString sString)
     return sResult;
 }
 
+QString XCppfilt::demangleJavaV3(QString sString)
+{
+    QString sResult;
+
+    char *pResult=java_demangle_v3(sString.toLatin1().data());
+    sResult=pResult;
+
+    free(pResult);
+
+    return sResult;
+}
