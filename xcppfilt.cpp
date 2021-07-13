@@ -48,3 +48,15 @@ QString XCppfilt::demangleJavaV3(QString sString)
 
     return sResult;
 }
+
+QString XCppfilt::demangleRust(QString sString)
+{
+    QString sResult;
+
+    char *pResult=rust_demangle(sString.toLatin1().data(),(DMGL_PARAMS|DMGL_ANSI|DMGL_TYPES));
+    sResult=pResult;
+
+    free(pResult);
+
+    return sResult;
+}
