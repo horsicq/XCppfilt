@@ -21,9 +21,9 @@
 #ifndef XCPPFILT_H
 #define XCPPFILT_H
 
-#include "demangle.h"
 #include <QObject>
 #include <stdio.h>
+#include "demangle.h"
 
 class XCppfilt : public QObject
 {
