@@ -11,3 +11,6 @@ SOURCES += \
     XCONFIG += cppfilt
     include($$PWD/3rdparty/cppfilt/cppfilt.pri)
 }
+
+DISTFILES += \
+    $$PWD/xcppfilt.cmake
