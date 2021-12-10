@@ -13,4 +13,6 @@ SOURCES += \
 }
 
 DISTFILES += \
+    $$PWD/LICENSE \
+    $$PWD/README.md \
     $$PWD/xcppfilt.cmake
