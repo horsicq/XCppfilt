@@ -35,7 +35,7 @@ public:
     static QString demangleGnuV3(QString sString);
     static QString demangleJavaV3(QString sString);
     static QString demangleRust(QString sString);
-    // TODO Check more
+    // TODO more types
 };
 
 #endif // XCPPFILT_H
