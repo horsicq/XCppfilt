@@ -29,7 +29,7 @@ QString XCppfilt::demangleGnuV3(QString sString)
 {
     QString sResult;
 
-    char *pResult=cplus_demangle_v3(sString.toLatin1().data(),(DMGL_PARAMS|DMGL_ANSI|DMGL_TYPES));
+    char *pResult=cplus_demangle_v3(sString.toLatin1().data(),(DMGL_PARAMS|DMGL_ANSI|DMGL_TYPES)); // TODO Check params
 
     sResult=pResult;
 
