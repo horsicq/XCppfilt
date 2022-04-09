@@ -27,7 +27,7 @@ unix:!macx {
         LIBS +=  $$PWD/libs/lin32/libcppfilt.a
     }
 }
-# TODO ARM
+# TODO ARM M1
 unix:macx {
     LIBS +=  $$PWD/libs/mac/libcppfilt.a
 }
