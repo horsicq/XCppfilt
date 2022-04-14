@@ -9,7 +9,7 @@ win32-g++ {
         LIBS += $$PWD/libs/win64-g++/libcppfilt.a
     }
 }
-# TODO ARM WIN10
+# TODO WIN10 ARM
 win32-msvc* {
     contains(QMAKE_TARGET.arch, x86_64) {
         LIBS += $$PWD/libs/win64-msvc/cppfilt.lib
