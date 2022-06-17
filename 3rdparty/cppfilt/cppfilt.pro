@@ -18,40 +18,21 @@ CONFIG(debug, debug|release) {
     TARGET = cppfilt
 }
 
+win32{
+    TARGET = cppfilt-win-$${QT_ARCH}
+}
+unix:!macx {
+    TARGET = cppfilt-unix-$${QT_ARCH}
+}
+unix:macx {
+    TARGET = cppfilt-macos-$${QT_ARCH}
+}
+
 DEFINES += "HAVE_STDLIB_H"
 DEFINES += "HAVE_STRING_H"
 
 INCLUDEPATH += $$PWD/src
 DEPENDPATH += $$PWD/src
-
-TARGETLIB_PATH = $$PWD
-
-win32-g++ {
-    contains(QT_ARCH, i386) {
-        DESTDIR=$${TARGETLIB_PATH}/libs/win32-g++
-    } else {
-        DESTDIR=$${TARGETLIB_PATH}/libs/win64-g++
-    }
-}
-win32-msvc* {
-    contains(QMAKE_TARGET.arch, x86_64) {
-        DESTDIR=$${TARGETLIB_PATH}/libs/win64-msvc
-    } else {
-        DESTDIR=$${TARGETLIB_PATH}/libs/win32-msvc
-    }
-}
-unix:!macx {
-    BITSIZE = $$system(getconf LONG_BIT)
-    if (contains(BITSIZE, 64)) {
-        DESTDIR=$${TARGETLIB_PATH}/libs/lin64
-    }
-    if (contains(BITSIZE, 32)) {
-        DESTDIR=$${TARGETLIB_PATH}/libs/lin32
-    }
-}
-unix:macx {
-    DESTDIR=$${TARGETLIB_PATH}/libs/mac
-}
 
 SOURCES += \
     src/cp-demangle.c \
@@ -70,3 +51,7 @@ HEADERS += \
     src/environ.h \
     src/libiberty.h \
     src/safe-ctype.h
+
+TARGETLIB_PATH = $$PWD
+
+DESTDIR=$${TARGETLIB_PATH}/libs
