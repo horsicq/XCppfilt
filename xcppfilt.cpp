@@ -29,7 +29,7 @@ QString XCppfilt::demangleGnuV3(QString sString)
 {
     QString sResult;
 
-    char *pResult=cplus_demangle_v3(sString.toLatin1().data(),(DMGL_PARAMS|DMGL_ANSI|DMGL_TYPES)); // TODO Check params !!!
+    char *pResult=cplus_demangle_v3(sString.toUtf8().data(),(DMGL_PARAMS|DMGL_ANSI|DMGL_TYPES)); // TODO Check params !!!
 
     sResult=pResult;
 
@@ -42,7 +42,7 @@ QString XCppfilt::demangleJavaV3(QString sString)
 {
     QString sResult;
 
-    char *pResult=java_demangle_v3(sString.toLatin1().data());
+    char *pResult=java_demangle_v3(sString.toUtf8().data());
 
     sResult=pResult;
 
@@ -55,7 +55,7 @@ QString XCppfilt::demangleRust(QString sString)
 {
     QString sResult;
 
-    char *pResult=rust_demangle(sString.toLatin1().data(),(DMGL_PARAMS|DMGL_ANSI|DMGL_TYPES));
+    char *pResult=rust_demangle(sString.toUtf8().data(),(DMGL_PARAMS|DMGL_ANSI|DMGL_TYPES));
 
     sResult=pResult;
 
