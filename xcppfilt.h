@@ -21,16 +21,17 @@
 #ifndef XCPPFILT_H
 #define XCPPFILT_H
 
-#include <QObject>
 #include <stdio.h>
+
+#include <QObject>
+
 #include "demangle.h"
 
-class XCppfilt : public QObject
-{
+class XCppfilt : public QObject {
     Q_OBJECT
 
 public:
-    explicit XCppfilt(QObject *pParent=nullptr);
+    explicit XCppfilt(QObject *pParent = nullptr);
 
     static QString demangleGnuV3(QString sString);
     static QString demangleJavaV3(QString sString);
@@ -38,4 +39,4 @@ public:
     // TODO more
 };
 
-#endif // XCPPFILT_H
+#endif  // XCPPFILT_H
