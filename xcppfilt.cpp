@@ -20,10 +20,12 @@
  */
 #include "xcppfilt.h"
 
-XCppfilt::XCppfilt(QObject *pParent) : QObject(pParent) {
+XCppfilt::XCppfilt(QObject *pParent) : QObject(pParent)
+{
 }
 
-QString XCppfilt::demangleGnuV3(QString sString) {
+QString XCppfilt::demangleGnuV3(QString sString)
+{
     QString sResult;
 
     char *pResult = cplus_demangle_v3(sString.toUtf8().data(), (DMGL_PARAMS | DMGL_ANSI | DMGL_TYPES));  // TODO Check params !!!
@@ -35,7 +37,8 @@ QString XCppfilt::demangleGnuV3(QString sString) {
     return sResult;
 }
 
-QString XCppfilt::demangleJavaV3(QString sString) {
+QString XCppfilt::demangleJavaV3(QString sString)
+{
     QString sResult;
 
     char *pResult = java_demangle_v3(sString.toUtf8().data());
@@ -47,7 +50,8 @@ QString XCppfilt::demangleJavaV3(QString sString) {
     return sResult;
 }
 
-QString XCppfilt::demangleRust(QString sString) {
+QString XCppfilt::demangleRust(QString sString)
+{
     QString sResult;
 
     char *pResult = rust_demangle(sString.toUtf8().data(), (DMGL_PARAMS | DMGL_ANSI | DMGL_TYPES));
