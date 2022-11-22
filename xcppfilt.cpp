@@ -20,8 +20,7 @@
  */
 #include "xcppfilt.h"
 
-XCppfilt::XCppfilt(QObject *pParent)
-    : QObject(pParent)
+XCppfilt::XCppfilt(QObject *pParent) : QObject(pParent)
 {
 }
 
