@@ -33,9 +33,9 @@ class XCppfilt : public QObject {
 public:
     explicit XCppfilt(QObject *pParent = nullptr);
 
-    static QString demangleGnuV3(QString sString);
-    static QString demangleJavaV3(QString sString);
-    static QString demangleRust(QString sString);
+    static QString demangleGnuV3(const QString &sString);
+    static QString demangleJavaV3(const QString &sString);
+    static QString demangleRust(const QString &sString);
     // TODO more
 };
 

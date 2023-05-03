@@ -24,7 +24,7 @@ XCppfilt::XCppfilt(QObject *pParent) : QObject(pParent)
 {
 }
 
-QString XCppfilt::demangleGnuV3(QString sString)
+QString XCppfilt::demangleGnuV3(const QString &sString)
 {
     QString sResult;
 
@@ -37,7 +37,7 @@ QString XCppfilt::demangleGnuV3(QString sString)
     return sResult;
 }
 
-QString XCppfilt::demangleJavaV3(QString sString)
+QString XCppfilt::demangleJavaV3(const QString &sString)
 {
     QString sResult;
 
@@ -50,7 +50,7 @@ QString XCppfilt::demangleJavaV3(QString sString)
     return sResult;
 }
 
-QString XCppfilt::demangleRust(QString sString)
+QString XCppfilt::demangleRust(const QString &sString)
 {
     QString sResult;
 
