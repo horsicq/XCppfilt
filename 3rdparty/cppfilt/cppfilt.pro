@@ -12,12 +12,6 @@ CONFIG += staticlib
 
 include(../../build.pri)
 
-CONFIG(debug, debug|release) {
-    TARGET = cppfiltd
-} else {
-    TARGET = cppfilt
-}
-
 win32{
     TARGET = cppfilt-win-$${QT_ARCH}
 }
