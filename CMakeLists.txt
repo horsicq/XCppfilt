@@ -34,3 +34,7 @@ ${PROJECT_SOURCE_DIR}/3rdparty/cppfilt/src/safe-ctype.h
 
 set_target_properties(cppfilt PROPERTIES LINKER_LANGUAGE C)
 set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
+
+if(MSVC)
+    add_definitions(-D_CRT_SECURE_NO_WARNINGS)
+endif()
