@@ -36,6 +36,8 @@ public:
     static QString demangleGnuV3(const QString &sString);
     static QString demangleJavaV3(const QString &sString);
     static QString demangleRust(const QString &sString);
+    static QString demangleGNAT(const QString &sString);
+    static QString demangleDLANG(const QString &sString);
 };
 
 #endif  // XCPPFILT_H

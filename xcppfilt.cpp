@@ -62,3 +62,29 @@ QString XCppfilt::demangleRust(const QString &sString)
 
     return sResult;
 }
+
+QString XCppfilt::demangleGNAT(const QString &sString)
+{
+    QString sResult;
+
+    char *pResult = ada_demangle(sString.toUtf8().data(), 0);
+
+    sResult = pResult;
+
+    free(pResult);
+
+    return sResult;
+}
+
+QString XCppfilt::demangleDLANG(const QString &sString)
+{
+    QString sResult;
+
+    char *pResult = dlang_demangle(sString.toUtf8().data(), 0);
+
+    sResult = pResult;
+
+    free(pResult);
+
+    return sResult;
+}
